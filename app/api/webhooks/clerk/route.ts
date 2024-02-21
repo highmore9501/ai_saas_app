@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     );
   }
 
-  // Get the headers
+  // 读取服务器接收到的请求头里的 svix-id, svix-timestamp, svix-signature
   const headerPayload = headers();
   const svix_id = headerPayload.get("svix-id");
   const svix_timestamp = headerPayload.get("svix-timestamp");
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
 
   let evt: WebhookEvent;
 
-  // Verify the payload with the headers
+  // 验证从发送过来的请求头是否合法
   try {
     evt = wh.verify(body, {
       "svix-id": svix_id,

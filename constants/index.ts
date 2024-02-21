@@ -1,41 +1,41 @@
 export const navLinks = [
   {
-    label: "Home",
+    label: "首页",
     route: "/",
     icon: "/assets/icons/home.svg",
   },
   {
-    label: "Image Restore",
+    label: "图像恢复",
     route: "/transformations/add/restore",
     icon: "/assets/icons/image.svg",
   },
   {
-    label: "Generative Fill",
+    label: "生成填充",
     route: "/transformations/add/fill",
     icon: "/assets/icons/stars.svg",
   },
   {
-    label: "Object Remove",
+    label: "移除物体",
     route: "/transformations/add/remove",
     icon: "/assets/icons/scan.svg",
   },
   {
-    label: "Object Recolor",
+    label: "物体重绘颜色",
     route: "/transformations/add/recolor",
     icon: "/assets/icons/filter.svg",
   },
   {
-    label: "Background Remove",
+    label: "移除背景",
     route: "/transformations/add/removeBackground",
     icon: "/assets/icons/camera.svg",
   },
   {
-    label: "Profile",
+    label: "个人资料",
     route: "/profile",
     icon: "/assets/icons/profile.svg",
   },
   {
-    label: "Buy Credits",
+    label: "购买点数",
     route: "/credits",
     icon: "/assets/icons/bag.svg",
   },
