@@ -18,8 +18,8 @@ const Credits = async () => {
   return (
     <>
       <Header
-        title="Buy Credits"
-        subtitle="Choose a credit package that suits your needs!"
+        title="购买点数"
+        subtitle="选择合适您的点数套餐!"
       />
 
       <section>
@@ -31,8 +31,8 @@ const Credits = async () => {
                 <p className="p-20-semibold mt-2 text-purple-500">
                   {plan.name}
                 </p>
-                <p className="h1-semibold text-dark-600">${plan.price}</p>
-                <p className="p-16-regular">{plan.credits} Credits</p>
+                <p className="h1-semibold text-dark-600">￥{plan.price}</p>
+                <p className="p-16-regular">{plan.credits} 点</p>
               </div>
 
               {/* Inclusions */}
@@ -55,9 +55,9 @@ const Credits = async () => {
                 ))}
               </ul>
 
-              {plan.name === "Free" ? (
+              {plan.name === "免费" ? (
                 <Button variant="outline" className="credits-btn">
-                  Free Consumable
+                  免费使用
                 </Button>
               ) : (
                 <SignedIn>

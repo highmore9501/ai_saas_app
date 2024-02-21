@@ -5,7 +5,7 @@ export const navLinks = [
     icon: "/assets/icons/home.svg",
   },
   {
-    label: "图像恢复",
+    label: "图像修复",
     route: "/transformations/add/restore",
     icon: "/assets/icons/image.svg",
   },
@@ -20,7 +20,7 @@ export const navLinks = [
     icon: "/assets/icons/scan.svg",
   },
   {
-    label: "物体重绘颜色",
+    label: "物体重新上色",
     route: "/transformations/add/recolor",
     icon: "/assets/icons/filter.svg",
   },
@@ -44,75 +44,75 @@ export const navLinks = [
 export const plans = [
   {
     _id: 1,
-    name: "Free",
+    name: "免费",
     icon: "/assets/icons/free-plan.svg",
     price: 0,
     credits: 20,
     inclusions: [
       {
-        label: "20 Free Credits",
+        label: "免费使用20点",
         isIncluded: true,
       },
       {
-        label: "Basic Access to Services",
+        label: "基本服务",
         isIncluded: true,
       },
       {
-        label: "Priority Customer Support",
+        label: "优先客服支持",
         isIncluded: false,
       },
       {
-        label: "Priority Updates",
+        label: "优先更新",
         isIncluded: false,
       },
     ],
   },
   {
     _id: 2,
-    name: "Pro Package",
+    name: "普通点数包",
     icon: "/assets/icons/free-plan.svg",
     price: 40,
     credits: 120,
     inclusions: [
       {
-        label: "120 Credits",
+        label: "120 点",
         isIncluded: true,
       },
       {
-        label: "Full Access to Services",
+        label: "可以使用所有服务",
         isIncluded: true,
       },
       {
-        label: "Priority Customer Support",
+        label: "优先客服支持",
         isIncluded: true,
       },
       {
-        label: "Priority Updates",
+        label: "优先更新",
         isIncluded: false,
       },
     ],
   },
   {
     _id: 3,
-    name: "Premium Package",
+    name: "豪华点数包",
     icon: "/assets/icons/free-plan.svg",
     price: 199,
     credits: 2000,
     inclusions: [
       {
-        label: "2000 Credits",
+        label: "2000 点",
         isIncluded: true,
       },
       {
-        label: "Full Access to Services",
+        label: "可以使用所有服务",
         isIncluded: true,
       },
       {
-        label: "Priority Customer Support",
+        label: "优先客服支持",
         isIncluded: true,
       },
       {
-        label: "Priority Updates",
+        label: "优先更新",
         isIncluded: true,
       },
     ],
@@ -122,29 +122,29 @@ export const plans = [
 export const transformationTypes = {
   restore: {
     type: "restore",
-    title: "Restore Image",
-    subTitle: "Refine images by removing noise and imperfections",
+    title: "图像修复",
+    subTitle: "移除图像中噪点和缺陷",
     config: { restore: true },
     icon: "image.svg",
   },
   removeBackground: {
     type: "removeBackground",
-    title: "Background Remove",
-    subTitle: "Removes the background of the image using AI",
+    title: "移除背景",
+    subTitle: "智能移除图像的背景",
     config: { removeBackground: true },
     icon: "camera.svg",
   },
   fill: {
     type: "fill",
-    title: "Generative Fill",
-    subTitle: "Enhance an image's dimensions using AI outpainting",
+    title: "生成填充",
+    subTitle: "使用ai生成图像需要扩展的部分",
     config: { fillBackground: true },
     icon: "stars.svg",
   },
   remove: {
     type: "remove",
-    title: "Object Remove",
-    subTitle: "Identify and eliminate objects from images",
+    title: "移除物体",
+    subTitle: "从图像中识别并移除物体",
     config: {
       remove: { prompt: "", removeShadow: true, multiple: true },
     },
@@ -152,8 +152,8 @@ export const transformationTypes = {
   },
   recolor: {
     type: "recolor",
-    title: "Object Recolor",
-    subTitle: "Identify and recolor objects from the image",
+    title: "物体重新上色",
+    subTitle: "从图像中识别物体并且重绘颜色",
     config: {
       recolor: { prompt: "", to: "", multiple: true },
     },
@@ -164,19 +164,19 @@ export const transformationTypes = {
 export const aspectRatioOptions = {
   "1:1": {
     aspectRatio: "1:1",
-    label: "Square (1:1)",
+    label: "正方形 (1:1)",
     width: 1000,
     height: 1000,
   },
   "3:4": {
     aspectRatio: "3:4",
-    label: "Standard Portrait (3:4)",
+    label: "普通照片 (3:4)",
     width: 1000,
     height: 1334,
   },
   "9:16": {
     aspectRatio: "9:16",
-    label: "Phone Portrait (9:16)",
+    label: "手机照片 (9:16)",
     width: 1000,
     height: 1778,
   },

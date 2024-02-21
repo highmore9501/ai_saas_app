@@ -36,10 +36,10 @@ import { useRouter } from "next/navigation"
 import { InsufficientCreditsModal } from "./InsufficientCreditsModal"
  
 export const formSchema = z.object({
-  title: z.string(),
-  aspectRatio: z.string().optional(),
-  color: z.string().optional(),
-  prompt: z.string().optional(),
+  标题: z.string(),
+  图像宽高比: z.string().optional(),
+  颜色: z.string().optional(),
+  提示词: z.string().optional(),
   publicId: z.string(),
 })
 
@@ -80,7 +80,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
       })
 
       const imageData = {
-        title: values.title,
+        title: values.标题,
         publicId: image?.publicId,
         transformationType: type,
         width: image?.width,
@@ -88,9 +88,9 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
         config: transformationConfig,
         secureURL: image?.secureURL,
         transformationURL: transformationUrl,
-        aspectRatio: values.aspectRatio,
-        prompt: values.prompt,
-        color: values.color,
+        aspectRatio: values.图像宽高比,
+        prompt: values.提示词,
+        color: values.颜色,
       }
 
       if(action === 'Add') {
@@ -189,8 +189,8 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
         {creditBalance < Math.abs(creditFee) && <InsufficientCreditsModal />}
         <CustomField 
           control={form.control}
-          name="title"
-          formLabel="Image Title"
+          name="标题"
+          formLabel="图像标题"
           className="w-full"
           render={({ field }) => <Input {...field} className="input-field" />}
         />
@@ -198,8 +198,8 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
         {type === 'fill' && (
           <CustomField
             control={form.control}
-            name="aspectRatio"
-            formLabel="Aspect Ratio"
+            name="图像宽高比"
+            formLabel="图像宽高比"
             className="w-full"
             render={({ field }) => (
               <Select
@@ -207,7 +207,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                 value={field.value}
               >
                 <SelectTrigger className="select-field">
-                  <SelectValue placeholder="Select size" />
+                  <SelectValue placeholder="选择比例" />
                 </SelectTrigger>
                 <SelectContent>
                   {Object.keys(aspectRatioOptions).map((key) => (
@@ -225,9 +225,9 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
           <div className="prompt-field">
             <CustomField 
               control={form.control}
-              name="prompt"
+              name="提示词"
               formLabel={
-                type === 'remove' ? 'Object to remove' : 'Object to recolor'
+                type === 'remove' ? '要移除的物体' : '要重绘颜色的物体'
               }
               className="w-full"
               render={({ field }) => (
@@ -247,8 +247,8 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             {type === 'recolor' && (
               <CustomField 
                 control={form.control}
-                name="color"
-                formLabel="Replacement Color"
+                name="颜色"
+                formLabel="要替换的颜色"
                 className="w-full"
                 render={({ field }) => (
                   <Input 
@@ -286,7 +286,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
           <TransformedImage 
             image={image}
             type={type}
-            title={form.getValues().title}
+            title={form.getValues().标题}
             isTransforming={isTransforming}
             setIsTransforming={setIsTransforming}
             transformationConfig={transformationConfig}
@@ -300,14 +300,14 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             disabled={isTransforming || newTransformation === null}
             onClick={onTransformHandler}
           >
-            {isTransforming ? 'Transforming...' : 'Apply Transformation'}
+            {isTransforming ? '图像生成中...' : '开始生成图像'}
           </Button>
           <Button 
             type="submit"
             className="submit-button capitalize"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Submitting...' : 'Save Image'}
+            {isSubmitting ? '保存中...' : '保存图像'}
           </Button>
         </div>
       </form>

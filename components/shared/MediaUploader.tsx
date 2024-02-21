@@ -64,7 +64,7 @@ const MediaUploader = ({
       {({ open }) => (
         <div className="flex flex-col gap-4">
           <h3 className="h3-bold text-dark-600">
-            Original
+            原始图像
           </h3>
 
           {publicId ? (
@@ -91,7 +91,7 @@ const MediaUploader = ({
                   height={24}
                 />
               </div>
-                <p className="p-14-medium">Click here to upload image</p>
+                <p className="p-14-medium">点击上传</p>
             </div>
           )}
         </div>
