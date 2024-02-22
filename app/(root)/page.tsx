@@ -14,9 +14,9 @@ const Home = async ({ searchParams }: SearchParamProps) => {
     <>
       <section className="home">
         <h1 className="home-heading">
-          Unleash Your Creative Vision with Imaginify
+          河马驱动助您释放创意
         </h1>
-        <ul className="flex-center w-full gap-20">
+        <ul className="flex-center w-full gap-20 pt-4">
           {navLinks.slice(1, 5).map((link) => (
             <Link
               key={link.route}
